@@ -1,0 +1,50 @@
+Project Overview:
+The basic calculator project consists of a simple C application that performs fundamental arithmetic operations: addition, subtraction, multiplication, and division. The code is organized into a few key files, each serving a specific purpose.
+
+File Analysis:
+The main.c file is the entry point of the application and handles user interaction. Here's how it operates:
+
+Functionality:
+Displays a menu to the user with options for different arithmetic operations and an exit option.
+Reads the user’s choice and performs the corresponding arithmetic operation based on that choice.
+Continuously prompts the user until the 'Exit' option is selected.
+
+Detailed Workflow:
+A while loop provides a persistent interface until the user chooses to exit.
+Depending on the user's choice, the program reads two integers and calls the appropriate function from calculator.c.
+The result of the operation is then displayed.
+For division, it checks for division by zero to prevent runtime errors.
+calculator.c
+The calculator.c file contains the implementation of the arithmetic functions:
+
+Functions:
+int add(int a, int b): Returns the sum of a and b.
+int subtract(int a, int b): Returns the difference between a and b.
+int multiply(int a, int b): Returns the product of a and b.
+int divide(int a, int b): Returns the quotient of a divided by b. Assumes that b is not zero, as this is checked in main.c.
+Implementation:
+
+Each function performs a straightforward arithmetic operation and returns the result. These implementations are simple and efficient for their intended purpose.
+calculator.h
+The calculator.h header file declares the arithmetic functions used across the project:
+
+Purpose:
+Provides function declarations for add, subtract, multiply, and divide.
+Ensures that main.c can use these functions by including this header file.
+
+Structure:
+Uses include guards (#ifndef, #define, #endif) to prevent multiple inclusions of the header file in a single compilation unit, which can lead to errors.
+Makefile
+The Makefile automates the compilation process:
+
+Targets:
+all: Compiles the project into an executable named calculator.
+main.o and calculator.o: Compile the main.c and calculator.c files into object files respectively.
+clean: Removes the compiled object files and executable to clean the build directory.
+
+Commands:
+Uses gcc with flags (-Wall, -g) to compile the code, where -Wall enables all warnings and -g includes debugging information.
+Links the object files to create the final executable.
+
+Summary:
+The basic calculator project is a straightforward implementation demonstrating key concepts in C programming. It includes:
